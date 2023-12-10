@@ -1,5 +1,5 @@
 # Study_of_1_bit_Scalable_FA
-
+All Simulations and Analysis performed on Cadence Virtuoso using GPDK 45nm technology model files.<br />
 ## INTRODUCTION
 
 The rapid advancement of transistor scaling has led to a significant surge in research efforts concerning the low-power design of micro-electronic circuits. The need for high performance microelectronic circuit design has consequently increased dramatically.<br />
