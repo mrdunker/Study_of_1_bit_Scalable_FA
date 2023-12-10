@@ -1,0 +1,1 @@
+# Study_of_1_bit_Scalable_FA
