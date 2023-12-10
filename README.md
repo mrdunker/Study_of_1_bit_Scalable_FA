@@ -152,5 +152,79 @@ From the data collected, the study firmly concludes the proposed design can be s
 
 PDP vs N-bit FA:<br />
 ![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/ab9ea2cd-3310-47f3-be73-0f39a20d0787)
- 
 
+
+The schematic for 64bit Ripple Carry Adder:<br />
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/e468f042-708a-4b1e-bbc2-16d5d9d83f27)
+
+<br />
+The input and output waveforms are shown below for the 64bit adder:
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/43c26c25-f8cd-4226-b887-ef4aee4416d7)
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/7e1d3a7d-e36d-4b9f-92b9-b1210947e21d)
+
+The observations taken for delay and dynamic power depicts, even though the proposed design consumes a large dynamic power and has a large delay in giving the expected output, yet the design produces a strong 1 and strong 0 as the output for sum and carry bits. One point to be noted, the input given of 100MHz, and the duty cycle is 50%. When scaled up to 64bit ripple carry adder, due to large delay being seen in the output, it is observed, that even though the outputs are maintained, the duty cycle is not 50%, on time for the Carry bit is more, and similarly the off time is more for the Sum bit in the output.<br />
+
+## Analysis with FANOUT variations
+
+he load driving capability is an important aspect for the performance of the proposed design of full adder. The initial testing for delay and dynamic power are done using fanout of 4, that is, it has the driving capability of successfully driving of 4-unit inverters. The FO-4 is taken as 6fF. The study has gone over various FOs from 4 to 64. The table below summaries the various load capacitance taken to realize the various FOs.<br />
+
+![Screenshot from 2023-12-10 21-29-01](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/b6255d45-e17d-4b01-be71-fa45df797141)
+
+<br />
+The first set of observations are taken for a VDD of 1.2V documented in the table below.<br />
+
+![Screenshot from 2023-12-10 21-29-19](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/bbe24dc8-cc3f-49ad-a60b-2088ede11d43)
+<br />
+It is observed, as the output load is increased, the overall delay to also raised, along with dynamic power of the circuit design proposed. Upon referencing the PDP values, there comes a massive spike increase after FO-16. Even with high-power consumption and delay, it is observed that strong 1 and 0 are produced for carry and sum bit outputs. <br />
+
+The benchmark voltage taken for the proposed study is set as 0.8V. The observations for the various fanouts are summarized in the table below. <br />
+
+![Screenshot from 2023-12-10 21-30-36](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/989bbcb2-c806-44b8-b024-356c6d4e9af1)
+
+The variations in the parameters can be visualized in the bar graphs shown below<br />
+
+<br />
+Delay Comparison for VDD 0.8 and 1.2 for various FO; 1 BIT FA:<br />
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/1a3ccfd0-e058-465d-87e4-7fa34c9d4995)
+
+Power Comparison for VDD 0.8 and 1.2 for various FO; 1 BIT FA:<br />
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/e962a203-8e8e-4724-839c-ecc8abee1739)
+
+
+PDP Comparison for VDD 0.8 and 1.2 for various FO; 1 BIT FA:<br />
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/6c1a7283-8cfd-4709-b2a5-13e9492f9080)
+<br />
+
+By the comparison between the response of the proposed FA design for 0.8V and 1.2V, it is observed that the PDP values are almost constant for various fanouts, though the is a sharp rise from 32 onwards. It can be drawn from here that for the proposed design fanout up till FO-16 should be favorable, beyond which the power consumption is not suitable.<br />
+To determine the favorable fanout for the proposed system conclusively, the study put together the data collected for varying FO for 1bit, 4bit leading up to 32bit FA.<br />
+
+## Delay comparison at various FO for n-bit adder
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/9a283351-308b-4ca3-a75b-7e612638f913)
+
+## Power comparison at various FO for n-bit adder
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/f73cac49-af2c-4140-a473-fd8dd99d382a)
+
+## PDP comparison at various FO for n-bit adder
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/b612b8f5-14ba-41dd-9cda-a60e9eefec36)
+
+<br />
+The study can conclusively state, FO-16 is a favorable load in regards of the performance, and beyond which the power dissipation and delay in outputs goes above the suitable range
+
+## CONCLUSION
+
+The project presented has gone over the proposed design for a novel hybrid full adder,  and took over to reproduce the results by re-implementing the design proposed. Cadence Virtuoso is used as the platform for designing the schematic and running the simulations and final design of the layout. In relation to arrive to the optimized sizing for the transistors, parametric analysis was performed with delay and PDP as the constraints.<br /><br />
+ 
+Using the same sizes simulation were done and delay, dynamic power and PDP were documented for 1-bit full Adder operating on 1.2V and 0.8V. Further working on 0.8 V, the proposed design was extended the 1-bit FA to 4-bit ,8-bit ,16-bit,32-bit and 64-bit found the delay,power. <br /><br />
+
+We have also observed the effects of change in delay,power and PDP for different ranges of FANOUT ranging from FO-4 to FO-64. The observations made were noted down compared with each other to find out which FO is ideal.<br /><br />
+
+It has been found out that if we go beyond FO-16 there is a significant increase in the PDP so as so it is not desired.<br />
