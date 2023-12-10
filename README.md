@@ -123,6 +123,34 @@ For 1-BIT FA:
 ![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/73f0a076-fe30-479d-8b2b-ea75e1a99be8)
 
 ![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/46c44325-47fe-490f-9140-4ea524c267bb)
+<br />
+
+Thus, the study here onwards has tested the design using 0.8V as VDD and supply voltages for inputs A, B and Cin. The functionality of the proposed FA can be seen under the simulation results shown below. <br />
+<br />
+Inputs for 1-BIT FA:<br />
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/900a439e-2b9f-4d33-90b9-1b8481564f24)
+Outputs for 1-BIT FA:<br />
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/2bd6fae4-cdd4-450c-b33f-d7a5529fb235)
 
 
+## Ripple Carry Adders (RCA)
+
+A ripple carry adder is a digital circuit used to add multiple binary numbers. It is one of the simplest forms of adders and is widely used in digital circuits and microprocessors. A major motivation for the proposed design for the Full Adder is to scale the adder to multiple bits without intermediate buffers or amplifiers to maintain the signal integrity. The reduction of these components leads to the reduction of overall power reduction. The study proceeds to analyze the performance of the design with multiple bits, namely 4, 8, 16, 32 and 64 bits.<br />
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/db204a54-76b7-475c-bd3c-c9f399b94a97)
+
+Before testing the ripple carry adder for delay and power performance, it must be focused upon the input sequence for the worst possible delay. The worst-case delay will be achieved when the carry Cin gets propagated to Cn as shown in the block diagram for n-bit ripple carry adder. To achieve such a test case, the sequence used in the proposed study is pattern 10101...depending upon the number of bits it it being tested for. The sequence pattern for B is the inverted form of A, that is. 01010.... The input for Cin must go from 0 to 1 for the first unit of the ripple carry adder, when the A0 is going from 0 to 1 and simultaneously B0 goes from 1 to 0.<br /> 
+FO-4 is used as the load, i.e., 6fF is integrated for measuring the delay and power performance. The recorded values for the delay and dynamic power; thus calculated PDP for each ripple carry adder. The data collected are depicted using the bar graphs below.<br />
+<br />
+Delay vs N-Bit FA:<br />
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/63105ebb-6404-4522-abd0-c0ed497e4b72)
+<br />
+Dynamic Power vs N-Bit FA:<br />
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/5ea6bb36-cae7-4317-8f24-860873f175e9)
+
+From the data collected, the study firmly concludes the proposed design can be scaled up to 64 bits, thus, realization of a 64-bit Ripple Carry Adder without the use of intermediate buffers. The delay can be observed to have a linear increasing pattern, alongside the exponentially increasing trend in dynamic power. A similar exponential rising trend can be seen in the PDP.<br />
+
+PDP vs N-bit FA:<br />
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/ab9ea2cd-3310-47f3-be73-0f39a20d0787)
+ 
 
