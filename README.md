@@ -1,4 +1,4 @@
-# Study_of_1_bit_Scalable_FA
+# Study_of_1_bit_Scalable_Low_Power_FA
 All Simulations and Analysis performed on Cadence Virtuoso using GPDK 45nm technology model files.<br />
 ## INTRODUCTION
 
