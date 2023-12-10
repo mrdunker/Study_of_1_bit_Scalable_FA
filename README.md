@@ -85,7 +85,44 @@ For each stage of the full adder, the propagation delay depends on the logical o
 Dynamic power in the context of a full adder refers to the power consumed by the circuit due to the charging and discharging of capacitive loads during the switching of digital signals. In digital circuits, including a full adder, dynamic power consumption is a significant aspect of energy usage and is influenced by factors such as the frequency of operation and the number of transitions between logic states.
 The Power-Delay Product (PDP) is a metric used to evaluate the energy efficiency of a digital circuit, and it is particularly relevant when considering the trade-off between power consumption and speed. PDP considers both dynamic power consumption and propagation delay, providing a comprehensive measure of a digital circuit's efficiency.<br />
 
+<br /><br />
+The formula for the Power-Delay Product (PDP) is given by:
+<br />
+```PDP = Pdyn ⋅τ```
+<br />Where:
+<br />
 
+    • Pdyn  is the dynamic power consumption of the circuit.
+    • τ is the propagation delay of the circuit.
+
+The schematic design for 1bit FA is shown below.<br />
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/c96ab2ae-0bb4-4bb8-b5fb-f998c51d2e0f)
+
+The schematic is made as a unit block; thus, it allows easy scalable design for multiple bits FA. Parametric analysis was implemented to determine the sizes for the transistors, focusing upon the delay and power consumed. For GPDK45 the minimal length for the transistors is fixed at 45nm and smallest feasible width is 120nm and largest value is 1000nm. The optimal sizes are determined, and the said sizes are used to scale the FA design from 1bit to 64bits.<br /> 
+The maximum allowed VDD for 45nm tech is 1.2V. The study starts to test the proposed FA design at different VDD values and infer from the delay and power consumed. <br />
+
+## Analysis with VDD variations
+
+The study goes over the supply voltage VDD and the inputs for the adder, which are A, B and Cin. As mentioned above the signals are set at 100MHz. The analysis is done for single bit adder. The schematic diagram for 1bit FA is shown.<br />
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/3cb44c67-b684-4cd4-87d3-15521dc9ad6e)
+
+
+The transient analysis is performed from 1.2V to 0.4V; the delay and dynamic power are noted, and PDP is calculated. The observations are summarized in the table below.<br />
+
+![Screenshot from 2023-12-10 21-17-35](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/0d54cdca-778e-44ba-8457-e659ea444a6d)
+
+<br />
+Upon the simulations, it is observed that till VDD of 0.5V, strong 1 and strong 0 are derived for sum and carry of the full adder. It can also be seen there is a steep rise in the propagation delay for the outputs. <br />
+The expected power performance is verified, as the VDD is reduced the overall power consumption is reduced. The propagation delay has the inverse effect; that is, with the decrease in the VDD, the overall delay sees rise. To have a better performance comparison, PDP is used. It is observed that when VDD is decreased below 0.8V, the delay increases abruptly. A similar change can been in the PDP, the PDP is almost constant till 0.8V, below which, the PDP increase is exponential.<br />
+
+For 1-BIT FA:
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/2f4f26d9-ce59-40f6-a1ed-912eb5e73c84)
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/73f0a076-fe30-479d-8b2b-ea75e1a99be8)
+
+![image](https://github.com/mrdunker/Study_of_1_bit_Scalable_FA/assets/38190245/46c44325-47fe-490f-9140-4ea524c267bb)
 
 
 
