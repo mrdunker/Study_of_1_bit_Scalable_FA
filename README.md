@@ -225,6 +225,13 @@ The project presented has gone over the proposed design for a novel hybrid full 
  
 Using the same sizes simulation were done and delay, dynamic power and PDP were documented for 1-bit full Adder operating on 1.2V and 0.8V. Further working on 0.8 V, the proposed design was extended the 1-bit FA to 4-bit ,8-bit ,16-bit,32-bit and 64-bit found the delay,power. <br /><br />
 
+
 We have also observed the effects of change in delay,power and PDP for different ranges of FANOUT ranging from FO-4 to FO-64. The observations made were noted down compared with each other to find out which FO is ideal.<br /><br />
 
 It has been found out that if we go beyond FO-16 there is a significant increase in the PDP so as so it is not desired.<br />
+
+
+## Acknowledgement
+
+1. Shant Rakshit,Team member,IIIT-B
+2. Arul Vignesh,Team member,IIIT-B
